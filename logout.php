@@ -13,7 +13,9 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Redirect to login page
-header('Location: login.php');
-exit();
+header('Content-Type: application/json');
+echo json_encode([
+    'success' => true,
+    'message' => 'Logout berhasil!'
+]);
 ?>
